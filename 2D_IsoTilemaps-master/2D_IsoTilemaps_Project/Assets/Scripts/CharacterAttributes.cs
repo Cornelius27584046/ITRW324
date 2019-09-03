@@ -2,20 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterAttributes : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-}
 //this class is made to control characters health systems later on.
 public class Health 
 {
