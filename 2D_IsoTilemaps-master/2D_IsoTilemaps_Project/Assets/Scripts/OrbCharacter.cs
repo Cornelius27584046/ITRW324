@@ -35,16 +35,16 @@ public class OrbCharacter : MonoBehaviour
             switch(MoveDirection)
             {
             case 0:
-                myRigidbody.velocity = new Vector2(0, moveSpeed);
+                myRigidbody.velocity = new Vector2(1, moveSpeed);
                 break;
             case 1:
-                myRigidbody.velocity = new Vector2(moveSpeed, 0);
+                myRigidbody.velocity = new Vector2(moveSpeed, 1);
                 break;
             case 2:
-                myRigidbody.velocity = new Vector2(0, -moveSpeed);
+                myRigidbody.velocity = new Vector2(1, -moveSpeed);
                 break;
             case 3:
-                myRigidbody.velocity = new Vector2(-moveSpeed, 0);
+                myRigidbody.velocity = new Vector2(-moveSpeed, 1);
                 break;
             }
 
