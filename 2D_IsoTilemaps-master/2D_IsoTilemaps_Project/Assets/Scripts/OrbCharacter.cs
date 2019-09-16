@@ -66,6 +66,16 @@ public class OrbCharacter : MonoBehaviour
             }
         }
     }
+    public void OrbCollide(Collision colOrb)
+    {
+        for (int i = 1; i < 4; i++)
+        {
+            if (colOrb.gameObject.name == ("orb" + i))
+            {
+                ChooseDirection();
+            }
+        }
+    }
 
     public void ChooseDirection()
     {
