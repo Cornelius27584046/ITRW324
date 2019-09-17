@@ -22,5 +22,13 @@ public class ScoreColide : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
+        for (int i = 1; i <= 4; i++)
+        {
+            if (collision.gameObject.name == "Star" + i)
+            {
+                CharacterAttributes.PlayerHealth.setHealth(0,15);
+                Destroy(collision.gameObject);
+            }
+        }
     }
 }
