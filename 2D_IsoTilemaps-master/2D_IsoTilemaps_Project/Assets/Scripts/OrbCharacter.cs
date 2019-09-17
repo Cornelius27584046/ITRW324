@@ -64,26 +64,22 @@ public class OrbCharacter : MonoBehaviour
             }
         }
     }
-    public void OrbCollide(Collision colOrb)
+    void OnCollisionEnter(Collision collidor)
     {
-        for (int i = 1; i < 4; i++)
-        {
-            if (colOrb.gameObject.name == ("orb" + i))
-            {
-                Debug.Log("Miss on " + i);
-                ChooseDirection();
-            }
-        }
-    }
-    public void WitchCollide(Collision colWit)
-    {
-        if (colWit.gameObject.name == ("Player_Isometric_Witch"))
+        if (collidor.gameObject.name == ("Witch"))
         {
             Debug.Log("hit on witch");
             ChooseDirection();
         }
+        for (int i = 1; i < 4; i++)
+        {
+            if (collidor.gameObject.tag == ("orb" + i))
+            {
+                Debug.Log("Hit on Orb" + i);
+                ChooseDirection();
+            }
+        }
     }
-
         public void ChooseDirection()
     {
         MoveDirection = Random.Range(0, 4);
