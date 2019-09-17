@@ -3,10 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //this class is made to control characters health systems later on.
+public class CharacterAttributes : MonoBehaviour
+{
+    public static int Score = 0;
+    public static Health PlayerHealth = new Health();
+    public static Armor PlayerArmor = new Armor();
+    private void OnGUI()
+    {
+        GUI.Box(new Rect(100, 100, 100, 100),"(" + PlayerHealth.getHealth().ToString() + "/" + PlayerHealth.getMaxHealth().ToString() + ")");
+    }
+}
+
 public class Health 
 {
     private int currentHealth = 0;
-    private int currentMax = 0;
+    private int currentMax = 100;
 
     //methods to adjust the current health
     public int getHealth()

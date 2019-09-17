@@ -4,31 +4,20 @@ using UnityEngine;
 
 public class ScoreColide : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //method below assignes a score for the player on collisding with an orb.
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "orb1" )
         {
-            KeepScore.Score += 100;
+            CharacterAttributes.PlayerHealth.setHealth(10, 0);
         }
         else if (collision.gameObject.name == "orb2")
         {
-            KeepScore.Score += 50;
+            CharacterAttributes.PlayerHealth.setHealth(10, 0);
         }
         else if (collision.gameObject.name == "orb3")
         {
-            KeepScore.Score += 25;
+            CharacterAttributes.PlayerHealth.setHealth(10, 0);
         }
     }
 }

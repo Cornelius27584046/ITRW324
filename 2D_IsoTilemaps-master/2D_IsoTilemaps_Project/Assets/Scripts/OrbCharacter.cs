@@ -55,7 +55,6 @@ public class OrbCharacter : MonoBehaviour
         else
         {
             waitCounter -= Time.deltaTime;
-
             myRigidbody.velocity = Vector2.zero;
 
             if(waitCounter < 0)
