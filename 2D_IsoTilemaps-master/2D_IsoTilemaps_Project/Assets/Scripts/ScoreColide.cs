@@ -14,9 +14,13 @@ public class ScoreColide : MonoBehaviour
                 CharacterAttributes.PlayerHealth.setHealth(10, 0);
             }
         }
-        if (collision.gameObject.name == "Shell1")
+        for (int i = 1; i <= 4; i++)
         {
-            CharacterAttributes.PlayerHealth.setMaxHealth(true);
+            if (collision.gameObject.name == "Shell" + i)
+            {
+                CharacterAttributes.PlayerHealth.setMaxHealth(true);
+                Destroy(collision.gameObject);
+            }
         }
     }
 }
