@@ -7,17 +7,28 @@ public class ScoreColide : MonoBehaviour
     //method below assignes a score for the player on collisding with an orb.
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "orb1" )
+        for (int i = 1; i <= 3; i++)
         {
-            CharacterAttributes.PlayerHealth.setHealth(10, 0);
+            if (collision.gameObject.name == "orb" + i)
+            {
+                CharacterAttributes.PlayerHealth.setHealth(10, 0);
+            }
         }
-        else if (collision.gameObject.name == "orb2")
+        for (int i = 1; i <= 4; i++)
         {
-            CharacterAttributes.PlayerHealth.setHealth(10, 0);
+            if (collision.gameObject.name == "Shell" + i)
+            {
+                CharacterAttributes.PlayerHealth.setMaxHealth(true);
+                Destroy(collision.gameObject);
+            }
         }
-        else if (collision.gameObject.name == "orb3")
+        for (int i = 1; i <= 4; i++)
         {
-            CharacterAttributes.PlayerHealth.setHealth(10, 0);
+            if (collision.gameObject.name == "Star" + i)
+            {
+                CharacterAttributes.PlayerHealth.setHealth(0,15);
+                Destroy(collision.gameObject);
+            }
         }
     }
 }

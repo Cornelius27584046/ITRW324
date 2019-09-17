@@ -29,10 +29,18 @@ public class Health
         if (damage > 0)
         {
             currentHealth -= damage;
+            if (currentHealth < 0)
+            {
+                currentHealth = 0;
+            }
         }
         if (gained > 0)
         {
             currentHealth += gained;
+            if (currentHealth > currentMax)
+            {
+                currentHealth = currentMax;
+            }
         }
     }
 
