@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Scene_Biome_Forest_Large.unity
+    guid: c917311eda524334b8747048e69704b5
   m_configObjects: {}
