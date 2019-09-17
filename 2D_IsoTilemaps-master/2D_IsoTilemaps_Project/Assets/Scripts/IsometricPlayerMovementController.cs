@@ -30,14 +30,4 @@ public class IsometricPlayerMovementController : MonoBehaviour
         isoRenderer.SetDirection(movement);
         rbody.MovePosition(newPos);
     }
-    void OnCollisionEnter(Collision collidor)
-    {
-        for (int i = 1; i < 4; i++)
-        {
-            if (collidor.gameObject.tag == ("orb" + i))
-            {
-                Debug.Log("Touched Orb" + i);
-            }
-        }
-    }
 }
