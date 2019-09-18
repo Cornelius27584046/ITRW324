@@ -11,7 +11,14 @@ public class ScoreColide : MonoBehaviour
         {
             if (collision.gameObject.name == "orb" + i)
             {
-                CharacterAttributes.PlayerHealth.setHealth(10, 0);
+                if (CharacterAttributes.PlayerArmor.ArmorOn == true)
+                {
+                    CharacterAttributes.PlayerArmor.setArmorStat(CharacterAttributes.PlayerArmor.ArmorType, 10, 0);
+                }
+                else
+                {
+                    CharacterAttributes.PlayerHealth.setHealth(10, 0);
+                }
             }
         }
         for (int i = 1; i <= 4; i++)
@@ -34,6 +41,20 @@ public class ScoreColide : MonoBehaviour
         {
             CharacterAttributes.PlayerArmor.setArmorOn("Wood");
             Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.name == "ArmorRepair1")
+        {
+            if (CharacterAttributes.PlayerArmor.ArmorOn == true)
+            {
+                CharacterAttributes.PlayerArmor.setArmorStat(CharacterAttributes.PlayerArmor.ArmorType, 0, (int)(CharacterAttributes.PlayerArmor.getArmorOn() * 0.20));
+            }
+        }
+        if (collision.gameObject.name == "ArmorRepair2")
+        {
+            if (CharacterAttributes.PlayerArmor.ArmorOn == true)
+            {
+                CharacterAttributes.PlayerArmor.setArmorStat(CharacterAttributes.PlayerArmor.ArmorType, 0, (int)(CharacterAttributes.PlayerArmor.getArmorOn() * 0.50));
+            }
         }
     }
 }

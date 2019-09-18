@@ -11,6 +11,7 @@ public class CharacterAttributes : MonoBehaviour
     private void OnGUI()
     {
         GUI.Box(new Rect(30, 20, 100, 70), "HP\n(" + PlayerHealth.getHealth().ToString() + "/" + PlayerHealth.getMaxHealth().ToString() + ")\nArmor\n(" + PlayerArmor.getArmorStat().ToString() + " / " + PlayerArmor.getArmorOn().ToString()+ ")");
+        //armor can either be destroyed on 0, meaning its left 0 and no repairs can be made, or code can be reverted to ensure the armor is always on, even on 0 and can be restored from that point.
     }
 }
 
@@ -60,8 +61,9 @@ public class Health
 //this class is created to maintain the armor a character can wear and its stats
 public class Armor
 {
-    private string[] ArmorType = { "None","Wood", "Stone", "Metal" }; //3 basic armor types and an indicator of no armor worn
+    private string[] ArmorTypes = { "None", "Wood", "Stone", "Metal" }; //3 basic armor types and an indicator of no armor worn
     private int[] ArmorValues = { 0, 30, 50, 100 };//the 3 types stats
+    public string ArmorType = "ABC";//this variable holds the current armor type the player is wearing.
     private int ArmorCarried = 0;//the players armor stat he/she is wearing
     private int ArmorMax = 0;
     public bool ArmorOn = false;//the attribute to determine if the player is wearing armore or not.
@@ -77,9 +79,12 @@ public class Armor
     {
         for (int k = 0; k < 4; k++)
         {
-            if (equipedArmor == ArmorType[k])
+            if (equipedArmor == ArmorTypes[k])
             {
                 ArmorMax = ArmorValues[k];
+                ArmorType = ArmorTypes[k].ToString();
+                ArmorCarried = ArmorMax;
+                ArmorOn = true;
             }
         }
     }
@@ -93,9 +98,7 @@ public class Armor
    //this methods sets the players armor stat.
     public void setArmorStat(string type, int damage, int repaired)
     {
-        if (ArmorOn == true)
-        {
-            if (type == ArmorType[1])
+       if (type == ArmorTypes[1])
             {
                 if (damage > 0)
                 {
@@ -114,7 +117,7 @@ public class Armor
                     }
                 }
             }
-            else if (type == ArmorType[2])
+       else if (type == ArmorTypes[2])
             {
                 if (damage > 0)
                 {
@@ -133,7 +136,7 @@ public class Armor
                     }
                 }
             }
-            else if (type == ArmorType[3])
+       else if (type == ArmorTypes[3])
             {
                 if (damage > 0)
                 {
@@ -151,11 +154,7 @@ public class Armor
                         ArmorCarried = ArmorValues[3];
                     }
                 }
-            }
-        }
-        else if (ArmorOn == false)
-        {
-            ArmorCarried = -1;//this line needs to interact with the players health instead then.
-        }               
+       }
+                      
     }
 }
