@@ -13,7 +13,15 @@ public class ScoreColide : MonoBehaviour
             {
                 if (CharacterAttributes.PlayerArmor.ArmorOn == true)
                 {
-                    CharacterAttributes.PlayerArmor.setArmorStat(CharacterAttributes.PlayerArmor.ArmorType, 10, 0);
+                    if (CharacterAttributes.PlayerArmor.getArmorStat() <= 10)
+                    {
+                        CharacterAttributes.PlayerHealth.setHealth((10 - CharacterAttributes.PlayerArmor.getArmorStat()), 0);
+                        CharacterAttributes.PlayerArmor.setArmorStat(CharacterAttributes.PlayerArmor.ArmorType, CharacterAttributes.PlayerArmor.getArmorStat(), 0);
+                    }
+                    else
+                    {
+                        CharacterAttributes.PlayerArmor.setArmorStat(CharacterAttributes.PlayerArmor.ArmorType, 10, 0);
+                    }
                 }
                 else
                 {
