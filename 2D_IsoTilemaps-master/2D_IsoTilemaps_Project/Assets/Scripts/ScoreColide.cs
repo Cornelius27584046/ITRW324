@@ -30,5 +30,10 @@ public class ScoreColide : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
+        if (collision.gameObject.name == "BarrelArmor")
+        {
+            CharacterAttributes.PlayerArmor.setArmorOn("Wood");
+            Destroy(collision.gameObject);
+        }
     }
 }

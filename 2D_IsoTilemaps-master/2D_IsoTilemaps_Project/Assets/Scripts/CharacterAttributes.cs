@@ -10,7 +10,7 @@ public class CharacterAttributes : MonoBehaviour
     public static Armor PlayerArmor = new Armor();
     private void OnGUI()
     {
-        GUI.Box(new Rect(100, 100, 100, 100),"(" + PlayerHealth.getHealth().ToString() + "/" + PlayerHealth.getMaxHealth().ToString() + ")");
+        GUI.Box(new Rect(30, 20, 100, 70), "HP\n(" + PlayerHealth.getHealth().ToString() + "/" + PlayerHealth.getMaxHealth().ToString() + ")\nArmor\n(" + PlayerArmor.getArmorStat().ToString() + " / " + PlayerArmor.getArmorOn().ToString()+ ")");
     }
 }
 
@@ -60,40 +60,42 @@ public class Health
 //this class is created to maintain the armor a character can wear and its stats
 public class Armor
 {
-    private string[] ArmorType = { "Wood", "Stone", "Metal" }; //3 basic armor types
-    private int[] ArmorValues = { 30, 50, 100 };//the 3 types stats
+    private string[] ArmorType = { "None","Wood", "Stone", "Metal" }; //3 basic armor types and an indicator of no armor worn
+    private int[] ArmorValues = { 0, 30, 50, 100 };//the 3 types stats
     private int ArmorCarried = 0;//the players armor stat he/she is wearing
-    private bool ArmorOn = false;//the attribute to determine if the player is wearing armore or not.
+    private int ArmorMax = 0;
+    public bool ArmorOn = false;//the attribute to determine if the player is wearing armore or not.
 
+    //methods below are used to determine what type of armor the character is wearing.
+    //this method gets the armor types maximum
+    public int getArmorOn()
+    {
+        return ArmorMax;
+    }
+    //this method sets the armor type maximum
+    public void setArmorOn(string equipedArmor)
+    {
+        for (int k = 0; k < 4; k++)
+        {
+            if (equipedArmor == ArmorType[k])
+            {
+                ArmorMax = ArmorValues[k];
+            }
+        }
+    }
+
+    //method below helps maintain the armor stat that varies on the type of armor the player is wearing.
+    //this method gets the players armor stat
     public int getArmorStat()
     {
         return ArmorCarried;
     }
-    //method below helps maintain the armor stat that varies on the type of armor the player is wearing.
+   //this methods sets the players armor stat.
     public void setArmorStat(string type, int damage, int repaired)
     {
         if (ArmorOn == true)
         {
-            if (type == ArmorType[0])
-            {
-                if (damage > 0)
-                {
-                    ArmorCarried -= damage;
-                    if (ArmorCarried <= 0)
-                    {
-                        ArmorOn = false;
-                    }
-                }
-                if (repaired > 0)
-                {
-                    ArmorCarried += repaired;
-                    if (ArmorCarried > ArmorValues[0])
-                    {
-                        ArmorCarried = ArmorValues[0];
-                    }
-                }
-            }
-            else if (type == ArmorType[1])
+            if (type == ArmorType[1])
             {
                 if (damage > 0)
                 {
@@ -131,10 +133,29 @@ public class Armor
                     }
                 }
             }
+            else if (type == ArmorType[3])
+            {
+                if (damage > 0)
+                {
+                    ArmorCarried -= damage;
+                    if (ArmorCarried <= 0)
+                    {
+                        ArmorOn = false;
+                    }
+                }
+                if (repaired > 0)
+                {
+                    ArmorCarried += repaired;
+                    if (ArmorCarried > ArmorValues[3])
+                    {
+                        ArmorCarried = ArmorValues[3];
+                    }
+                }
+            }
         }
         else if (ArmorOn == false)
         {
-            //write so damage is assigned to health
+            ArmorCarried = -1;//this line needs to interact with the players health instead then.
         }               
     }
 }
