@@ -12,7 +12,6 @@ public class OrbCharacter : MonoBehaviour
     private float moveCounter;
     public float waitTime;
     private float waitCounter;
-
     private int MoveDirection;
     // Start is called before the first frame update
     void Start()
@@ -31,8 +30,7 @@ public class OrbCharacter : MonoBehaviour
         if(isMoving)
         {
             moveCounter -= Time.deltaTime;
-
-            switch(MoveDirection)
+            switch (MoveDirection)
             {
             case 0:
                 myRigidbody.velocity = new Vector2(1, moveSpeed);
@@ -57,7 +55,6 @@ public class OrbCharacter : MonoBehaviour
         else
         {
             waitCounter -= Time.deltaTime;
-
             myRigidbody.velocity = Vector2.zero;
 
             if(waitCounter < 0)
@@ -66,7 +63,6 @@ public class OrbCharacter : MonoBehaviour
             }
         }
     }
-
     public void ChooseDirection()
     {
         MoveDirection = Random.Range(0, 4);

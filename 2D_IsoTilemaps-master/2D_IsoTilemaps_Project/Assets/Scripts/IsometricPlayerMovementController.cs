@@ -14,6 +14,8 @@ public class IsometricPlayerMovementController : MonoBehaviour
     {
         rbody = GetComponent<Rigidbody2D>();
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
+        CharacterAttributes.PlayerHealth.setHealth(0, 100);
+
     }
 
 
