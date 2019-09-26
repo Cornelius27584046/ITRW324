@@ -1,0 +1,1 @@
+{"hadMaxH":100,"hadMaxA":30,"hadHealth":100,"hadArmor":10,"hadArmorType":"Wood","playerPos":{"x":9.547280311584473,"y":3.6826350688934328,"z":0.0}}
