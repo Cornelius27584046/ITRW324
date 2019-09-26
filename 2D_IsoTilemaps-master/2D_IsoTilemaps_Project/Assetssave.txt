@@ -1,1 +1,1 @@
-{"hadHealth":100,"hadArmor":30,"playerPos":{"x":5.21073579788208,"y":2.5762758255004885,"z":0.0}}
+{"hadHealth":100,"hadArmor":0,"hadArmorType":"ABC","playerPos":{"x":6.54661750793457,"y":4.325955390930176,"z":0.0}}

@@ -10662,12 +10662,12 @@ PrefabInstance:
     - target: {fileID: 3339481645408498932, guid: 5e2a82902b6ea4c0b9b652322ffadcff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.12
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 3339481645408498932, guid: 5e2a82902b6ea4c0b9b652322ffadcff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.41
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: 3339481645408498932, guid: 5e2a82902b6ea4c0b9b652322ffadcff,
         type: 3}
@@ -10754,6 +10754,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 3339481645326394339, guid: 5e2a82902b6ea4c0b9b652322ffadcff,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3339481645326394339, guid: 5e2a82902b6ea4c0b9b652322ffadcff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e2a82902b6ea4c0b9b652322ffadcff, type: 3}
@@ -37447,6 +37457,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3e9ac7455d3e740b348ce4342594fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1623522007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623522002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77290d2b20a36674d8ffec54b646c1ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1623522002}
 --- !u!1 &1756829819
 GameObject:
   m_ObjectHideFlags: 0
@@ -74540,7 +74563,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1847732261}
   - component: {fileID: 1847732262}
-  - component: {fileID: 1847732260}
   m_Layer: 0
   m_Name: Score
   m_TagString: Untagged
@@ -74548,18 +74570,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1847732260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1847732259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77290d2b20a36674d8ffec54b646c1ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1847732261
 Transform:
   m_ObjectHideFlags: 0
