@@ -1,1 +1,1 @@
-{"hadMaxH":100,"hadMaxA":30,"hadHealth":100,"hadArmor":10,"hadArmorType":"Wood","playerPos":{"x":9.547280311584473,"y":3.6826350688934328,"z":0.0}}
+{"hadMaxH":100,"hadMaxA":0,"hadHealth":80,"hadArmor":0,"hadArmorType":"ABC","playerPos":{"x":7.863753318786621,"y":3.8779687881469728,"z":0.0}}

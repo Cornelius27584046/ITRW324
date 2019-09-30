@@ -18,8 +18,8 @@ public static class SaveSystem
 
     public static void Save(string saveString)
     {
-        File.WriteAllText(SAVE_FOLDER + "save.txt", saveString);
-        Debug.Log("Saved!");
+        File.WriteAllText(SAVE_FOLDER + "/save.txt", saveString);
+        Debug.Log("Saved To File!");
     }
 
     public static string Load()
@@ -27,7 +27,7 @@ public static class SaveSystem
         if (File.Exists(SAVE_FOLDER + "/save.txt"))
         {
             string savestring = File.ReadAllText(SAVE_FOLDER + "/save.txt");
-            Debug.Log("Loaded!");
+            Debug.Log("Loaded From File!");
             return savestring;
         }
         else

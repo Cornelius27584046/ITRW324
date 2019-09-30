@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class SaveProgress : MonoBehaviour
+public static class SaveProgress //: MonoBehaviour
 {
-    [SerializeField]private GameObject player = new GameObject();
+    [SerializeField]private static GameObject player = new GameObject();
 
-    private void Awake()
+    private static void Awake()
     {
         SaveSystem.Init();
         player = GameObject.Find("PlayerWitch");
     }
 
     //update method to call save method once key pressed
-    private void Update()
+    private static void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
@@ -28,7 +28,7 @@ public class SaveProgress : MonoBehaviour
     }
 
     //method to save player data as is in world.
-    private void Save()
+    private static void Save()
     {
         Vector3 playerposition = player.transform.position;
         SaveObject saveobject = new SaveObject
@@ -46,7 +46,7 @@ public class SaveProgress : MonoBehaviour
     }
 
     //method to load the players data from a previous session
-    private void Load()
+    private static void Load()
     {
         string saveString = SaveSystem.Load();
         if (saveString != null)
@@ -60,7 +60,7 @@ public class SaveProgress : MonoBehaviour
             CharacterAttributes.PlayerHealth.setHealth(0, saveObject.hadHealth);
             CharacterAttributes.PlayerArmor.setArmorStat(saveObject.hadArmorType, 0, saveObject.hadArmor);
 
-            Debug.Log("Loaded!");
+            Debug.Log("Loaded In Game!");
         }
         else
         {

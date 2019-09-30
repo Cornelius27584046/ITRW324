@@ -45,9 +45,9 @@ public class ScoreColide : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
-        if (collision.gameObject.name == "BarrelArmor")
+        if (collision.gameObject.name == "MetalArmor")
         {
-            CharacterAttributes.PlayerArmor.setArmorOn("Wood");
+            CharacterAttributes.PlayerArmor.setArmorOn("Metal");
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.name == "ArmorRepair1")
