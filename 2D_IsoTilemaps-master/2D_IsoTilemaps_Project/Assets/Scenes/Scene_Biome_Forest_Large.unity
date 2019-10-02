@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 18327955}
   - component: {fileID: 18327957}
   - component: {fileID: 18327956}
+  - component: {fileID: 18327958}
   m_Layer: 0
   m_Name: spider
   m_TagString: Enemy
@@ -397,6 +398,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32116103, y: 0.27192605}
   m_EdgeRadius: 0
+--- !u!114 &18327958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18327952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e932ba4b69bf3c4da0e80f0ad9bba8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDealt: 8
 --- !u!1 &72994895
 GameObject:
   m_ObjectHideFlags: 0
@@ -13134,6 +13148,7 @@ GameObject:
   - component: {fileID: 1105070572}
   - component: {fileID: 1105070571}
   - component: {fileID: 1105070570}
+  - component: {fileID: 1105070574}
   m_Layer: 0
   m_Name: orb3
   m_TagString: Enemy
@@ -13267,6 +13282,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1105070574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105070568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e932ba4b69bf3c4da0e80f0ad9bba8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDealt: 5
 --- !u!1 &1110532020
 GameObject:
   m_ObjectHideFlags: 0
@@ -13609,6 +13637,7 @@ GameObject:
   - component: {fileID: 1329597331}
   - component: {fileID: 1329597330}
   - component: {fileID: 1329597329}
+  - component: {fileID: 1329597333}
   m_Layer: 0
   m_Name: orb2
   m_TagString: Enemy
@@ -13742,6 +13771,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1329597333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329597327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e932ba4b69bf3c4da0e80f0ad9bba8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDealt: 5
 --- !u!1 &1389151794 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7683452084394070198, guid: 3b0788909d2477247a43cb4f4ceb765d,
@@ -38153,6 +38195,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b449472a39703d344874b4c2c3f48a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1623522010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623522002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10cf940ac54ee948971bf2d8812dd7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMaxHealth: 10
+  playerCurrentHealth: 0
+  waitToReload: 0
+  reloading: 0
 --- !u!1 &1756829819
 GameObject:
   m_ObjectHideFlags: 0
@@ -75458,6 +75516,7 @@ GameObject:
   - component: {fileID: 2130866751}
   - component: {fileID: 2130866750}
   - component: {fileID: 2130866754}
+  - component: {fileID: 2130866755}
   m_Layer: 0
   m_Name: orb1
   m_TagString: Enemy
@@ -75591,6 +75650,19 @@ MonoBehaviour:
   isMoving: 1
   moveTime: 2
   waitTime: 2
+--- !u!114 &2130866755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130866749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e932ba4b69bf3c4da0e80f0ad9bba8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDealt: 5
 --- !u!1 &2135786852 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7683452084394070198, guid: 3b0788909d2477247a43cb4f4ceb765d,
