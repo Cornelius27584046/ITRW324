@@ -18,8 +18,11 @@ public class OrbCharacter : MonoBehaviour
     {
         myRigidbody = GetComponent<Rigidbody2D>();
 
-        waitCounter = waitTime;
-        moveCounter = moveTime;
+        //waitCounter = waitTime;
+        //moveCounter = moveTime;
+
+        waitCounter = Random.Range(waitTime * 0.75f, waitTime * 1.25f);
+        moveCounter = Random.Range(moveTime * 0.75f, waitTime * 1.25f);
 
         ChooseDirection();
     }
@@ -49,7 +52,9 @@ public class OrbCharacter : MonoBehaviour
             if(moveCounter < 0)
             {
                 isMoving = false;
-                waitCounter = waitTime;
+                //waitCounter = waitTime;
+                waitCounter = Random.Range(waitTime * 0.75f, waitTime * 1.25f);
+
             }
         }
         else
@@ -67,6 +72,7 @@ public class OrbCharacter : MonoBehaviour
     {
         MoveDirection = Random.Range(0, 4);
         isMoving = true;
-        moveCounter = moveTime;
+        //moveCounter = moveTime;
+        moveCounter = Random.Range(moveTime * 0.75f, waitTime * 1.25f);
     }
 }
