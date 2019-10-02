@@ -1292,6 +1292,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCamera_IsometricPixelPerfect
       objectReference: {fileID: 0}
+    - target: {fileID: 217815823075059427, guid: a715e6498a8f8444e8af75aa518ea006,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5645696305277769106, guid: a715e6498a8f8444e8af75aa518ea006,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -75431,6 +75436,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerWitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2896457568260522569, guid: 57dc9c20081065549a1a528d7c6eee9e,
         type: 3}
       propertyPath: m_TransformSyncMode
@@ -75440,11 +75460,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SyncRotationAxis
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerWitch
       objectReference: {fileID: 0}
     - target: {fileID: 4517516747076508404, guid: 57dc9c20081065549a1a528d7c6eee9e,
         type: 3}
