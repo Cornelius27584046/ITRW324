@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public static Inventory PlayerInventory = new Inventory();
-    private int itemPlacer = -1;
-    public string[] itemsNameSlot = new string[10];
-    public int[] itemsAmountSlot = new int[10];
+    public static Backpack PlayerInventory = new Backpack();
     private void OnGUI()
     {
-        GUI.Box(new Rect((Screen.width - 120), 100, 100, 30),"Backpack");
-        //armor can either be destroyed on 0, meaning its left 0 and no repairs can be made, or code can be reverted to ensure the armor is always on, even on 0 and can be restored from that point.
+        GUI.Box(new Rect((Screen.width - 120),100 ,100, 130), "Backpack\n" + "Logs\n" + PlayerInventory.getItemCount().ToString());
     }
+}
+
+public class Backpack
+{
+    public int itemPlacer = -1;
+    private int logcollect = 2000;
+    public string[] itemsNameSlot = new string[10];
+    public int[] itemsAmountSlot = new int[10];
+
     public void AddItem(string item, int amount)
     {
+
+        logcollect++;
         itemPlacer += 1;
         for (int i = 0; i < itemsNameSlot.Length; i++)
         {
@@ -35,6 +42,10 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
+    }
+    public int getItemCount()
+    {
+        return logcollect;
     }
     public int getNextItemSlot()
     {

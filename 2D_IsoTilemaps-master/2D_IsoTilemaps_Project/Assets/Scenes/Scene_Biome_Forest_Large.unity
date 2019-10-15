@@ -345,7 +345,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18327952}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa6c1ef1eca53dc4bbc7c110d452a738, type: 3}
   m_Name: 
@@ -757,12 +757,12 @@ PrefabInstance:
     - target: {fileID: 7683452084394070199, guid: 3b0788909d2477247a43cb4f4ceb765d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.167
+      value: 3.12
       objectReference: {fileID: 0}
     - target: {fileID: 7683452084394070199, guid: 3b0788909d2477247a43cb4f4ceb765d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.562
+      value: -1.162
       objectReference: {fileID: 0}
     - target: {fileID: 7683452084394070199, guid: 3b0788909d2477247a43cb4f4ceb765d,
         type: 3}
@@ -75451,6 +75451,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerWitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4517516747076508404, guid: 57dc9c20081065549a1a528d7c6eee9e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -75506,21 +75521,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerWitch
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2896457568260522569, guid: 57dc9c20081065549a1a528d7c6eee9e,
         type: 3}
       propertyPath: m_TransformSyncMode
@@ -75531,8 +75531,19 @@ PrefabInstance:
       propertyPath: m_SyncRotationAxis
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2896457568260522569, guid: 57dc9c20081065549a1a528d7c6eee9e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218585813360330285, guid: 57dc9c20081065549a1a528d7c6eee9e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1218585813360330284, guid: 57dc9c20081065549a1a528d7c6eee9e, type: 3}
+    - {fileID: 1218585813360330285, guid: 57dc9c20081065549a1a528d7c6eee9e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 57dc9c20081065549a1a528d7c6eee9e, type: 3}
 --- !u!4 &3339481644816344577 stripped
 Transform:
