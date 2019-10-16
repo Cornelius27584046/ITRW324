@@ -53,7 +53,7 @@ public class ScoreColide : MonoBehaviour
         {
             if (collision.gameObject.name == "TreePalm" + i)
             {
-                Inventory.PlayerInventory.AddItem("Logs", 1);
+                Inventory.PlayerInventory.AddItem("Logs");
             }
         }
         //armor collection beneath

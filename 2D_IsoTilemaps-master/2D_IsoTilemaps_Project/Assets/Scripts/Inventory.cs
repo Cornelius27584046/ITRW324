@@ -6,49 +6,36 @@ public class Inventory : MonoBehaviour
 {
     public static Backpack PlayerInventory = new Backpack();
     private void OnGUI()
-    {
-        GUI.Box(new Rect((Screen.width - 120),100 ,100, 130), "Backpack\n" + "Logs\n" + PlayerInventory.getItemCount().ToString());
+    {//only three items willbe collectable, might solve problem
+        GUI.Box(new Rect((Screen.width - 120),100 ,100, 70), "Backpack" + "\nLogs : " + PlayerInventory.getTypeAmm("Logs").ToString() + "\nStone : " + PlayerInventory.getTypeAmm("Stone").ToString() + "\nGrass : " + PlayerInventory.getTypeAmm("Grass").ToString());
     }
 }
 
 public class Backpack
 {
-    public int itemPlacer = -1;
-    private int logcollect = 2000;
-    public string[] itemsNameSlot = new string[10];
-    public int[] itemsAmountSlot = new int[10];
+    public string[] itemsNameSlot = { "Logs","Stone","Grass"};
+    public int[] itemsAmountSlot = new int[3];
 
-    public void AddItem(string item, int amount)
+    public void AddItem(string type)
     {
-
-        logcollect++;
-        itemPlacer += 1;
         for (int i = 0; i < itemsNameSlot.Length; i++)
         {
-            if (itemsNameSlot[i].ToString() == item)
+            if (type == itemsNameSlot[i])
             {
                 itemsAmountSlot[i] += 1;
             }
-            else
-            {
-                if (itemPlacer < itemsNameSlot.Length)
-                {
-                    itemsNameSlot[itemPlacer] = item + " " + amount.ToString();
-                    GUI.Box(new Rect((Screen.width - 120), 140, 100, 30), "/n" + item + ": " + amount.ToString());
-                }
-                else
-                {
-                    //do nothing, dont pick up item
-                }
-            }
         }
     }
-    public int getItemCount()
+    public int getTypeAmm(string type)
     {
-        return logcollect;
-    }
-    public int getNextItemSlot()
-    {
-        return itemPlacer;
+        int x = -1;
+        for (int i = 0; i < itemsNameSlot.Length; i++)
+        {
+            if (type == itemsNameSlot[i])
+            {
+                x = itemsAmountSlot[i];
+            }
+        }
+        return x;
     }
 }
