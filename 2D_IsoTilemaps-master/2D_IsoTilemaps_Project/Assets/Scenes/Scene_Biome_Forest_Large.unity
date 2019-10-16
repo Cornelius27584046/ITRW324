@@ -11793,7 +11793,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52b8a64254abb514cb63b6e59db88c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Durability: 5
 --- !u!1 &1090921682
 GameObject:
   m_ObjectHideFlags: 0
@@ -13720,7 +13719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52b8a64254abb514cb63b6e59db88c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Durability: 5
 --- !u!1 &1436582029
 GameObject:
   m_ObjectHideFlags: 0
@@ -75528,7 +75526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52b8a64254abb514cb63b6e59db88c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Durability: 5
 --- !u!1001 &1218585812819033333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75536,6 +75533,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerWitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4517516747076508404, guid: 57dc9c20081065549a1a528d7c6eee9e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -75591,21 +75603,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerWitch
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517516747076508401, guid: 57dc9c20081065549a1a528d7c6eee9e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1218585813360330285, guid: 57dc9c20081065549a1a528d7c6eee9e,
         type: 3}
       propertyPath: m_Enabled
@@ -75630,6 +75627,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218585813959327592, guid: 57dc9c20081065549a1a528d7c6eee9e,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1218585813360330284, guid: 57dc9c20081065549a1a528d7c6eee9e, type: 3}
