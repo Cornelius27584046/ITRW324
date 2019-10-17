@@ -48,12 +48,13 @@ public class ScoreColide : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
-        //log collection beneath
+        //log collection beneath & treecutting
         for (int i = 1; i <= 3; i++)
         {
-            if (collision.gameObject.name == "TreePalm" + i)
+            if (collision.gameObject.name == "TreePalmC" + i)
             {
                 Inventory.PlayerInventory.AddItem("Logs");
+                //================================tree cutting section===================================
             }
         }
         //armor collection beneath
@@ -78,19 +79,6 @@ public class ScoreColide : MonoBehaviour
                 CharacterAttributes.PlayerArmor.setArmorStat(CharacterAttributes.PlayerArmor.ArmorType, 0, (int)(CharacterAttributes.PlayerArmor.getArmorOn() * 0.50));
             }
         }
-        //================================tree cutting section===================================
-        int TreeDurability = 5;
-        if ((collision.gameObject.name == "PlayerWitch") || (collision.gameObject.name == "Sword"))
-        {
-            if (TreeDurability > 0)
-            {
-                --TreeDurability;
-                Debug.Log(TreeDurability);
-            }
-            else
-            {
-                Destroy(collision.gameObject);
-            }
-        }
+        
 }
 }
