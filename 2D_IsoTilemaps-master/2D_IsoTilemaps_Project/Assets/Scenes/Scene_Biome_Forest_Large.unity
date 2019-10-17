@@ -75594,6 +75594,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword
       objectReference: {fileID: 0}
+    - target: {fileID: 4517516745987656250, guid: 57dc9c20081065549a1a528d7c6eee9e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1218585813360330284, guid: 57dc9c20081065549a1a528d7c6eee9e, type: 3}
     - {fileID: 1218585813360330285, guid: 57dc9c20081065549a1a528d7c6eee9e, type: 3}
