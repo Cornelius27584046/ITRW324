@@ -11,13 +11,15 @@ public class TreeDurability : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         hitcount++;
-        if (hitcount == 5)
+        for (int i = 1; i <= 3; i++)
         {
-            Destroy(collision.gameObject);
-            collision.gameObject.name = "TreePalm" + i;
-            Destroy(collision.gameObject);
-            hitcount = 0;
-        }
+            if (hitcount == 5)
+            {
+                collision.gameObject.name = "TreePalm" + i;
+                Destroy(collision.gameObject);
+                hitcount = 0;
+            }
+        }        
         //hit on tree script
         for (int i = 1; i <= 3; i++)
         {
