@@ -6,6 +6,7 @@ public class GyroMovement : MonoBehaviour
 {
     private bool isgyroenabled;
     private Gyroscope gyro;
+    private Rigidbody rigid;
 
     private GameObject camContainer;
     private Quaternion rot;
@@ -13,14 +14,15 @@ public class GyroMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        camContainer = new GameObject("ContainerForCam");
+        rigid = GetComponent<Rigidbody>();
+        /*camContainer = new GameObject("ContainerForCam");
         camContainer.transform.position = transform.position;
         transform.SetParent(camContainer.transform);
 
-        isgyroenabled = EnableGyro();    
+        isgyroenabled = EnableGyro();  */  
     }
 
-    private bool EnableGyro()
+   /* private bool EnableGyro()
     {
         if (SystemInfo.supportsGyroscope)
         {
@@ -32,14 +34,15 @@ public class GyroMovement : MonoBehaviour
             return true;
         }
         return false;
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
     {
-        if (isgyroenabled)
+        rigid.AddForce(Input.acceleration);
+        /*if (isgyroenabled)
         {
             transform.localRotation = gyro.attitude * rot;
-        }
+        }*/
     }
 }
