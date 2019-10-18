@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScoreColide : MonoBehaviour
 {
+    //Object[] trees = new Object[9];
     //method below assignes a score for the player on collisding with objects.
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -42,19 +43,19 @@ public class ScoreColide : MonoBehaviour
         //star on health regain beneath 
         for (int i = 1; i <= 4; i++)
         {
-            if (collision.gameObject.name == "Star" + i)
+            if (collision.gameObject.name == "Hart" + i)
             {
                 CharacterAttributes.PlayerHealth.setHealth(0,15);
                 Destroy(collision.gameObject);
             }
         }
         //log collection beneath & treecutting
-        for (int i = 1; i <= 3; i++)
+        for (int i = 1; i <= 9; i++)
         {
             if (collision.gameObject.name == "TreePalmC" + i)
             {
+                TreeDurability.Tree.StartTree(); //this is not working correct
                 Inventory.PlayerInventory.AddItem("Logs");
-                //================================tree cutting section===================================
             }
         }
         //armor collection beneath

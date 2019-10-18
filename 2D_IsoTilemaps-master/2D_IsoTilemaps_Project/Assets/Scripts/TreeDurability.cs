@@ -4,44 +4,15 @@ using UnityEngine;
 
 public class TreeDurability : MonoBehaviour
 {
+    public static TreeLife Tree = new TreeLife();    
+}
+public class TreeLife
+{
     private int hitcount = 0;
     private int TreeDur = 5;
     private float TreeRegenTime = 20;
     public int TreeStage = 1; //made public for later stage of implementation where a tree can have different stages with different sprites.
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        hitcount++;
-        for (int i = 1; i <= 3; i++)
-        {
-            if (hitcount == 5)
-            {
-                collision.gameObject.name = "TreePalm" + i;
-                Destroy(collision.gameObject);
-                hitcount = 0;
-            }
-        }        
-        //hit on tree script
-        for (int i = 1; i <= 3; i++)
-        {
-            if (collision.gameObject.name == "PlayerWitch")
-            {
-                TreeCut();
-                if (TreeDur > 0)
-                {
-                    setTimer();
-                    TreeRegenTime -= Time.deltaTime;
-                    Regrowth();
-                }
-                else
-                {
-                    TreeRegenTime = TreeRegenTime * 3;
-                    TreeRegenTime -= Time.deltaTime;
-                    Regrowth();
-                }
-            }
-        }
 
-    }
     private void TreeCut()
     {
         TreeDur--;
@@ -60,4 +31,30 @@ public class TreeDurability : MonoBehaviour
     {
         return TreeRegenTime;
     }
+    public void StartTree()
+    {
+        hitcount++;
+        if (hitcount == 5)
+        {
+            hitcount = 0;
+        }
+        else
+        {
+            TreeCut();
+            if (TreeDur > 0)
+            {
+                setTimer();
+                TreeRegenTime -= Time.deltaTime;
+                Regrowth();
+
+            }
+            else
+            {
+                TreeRegenTime = TreeRegenTime * 3;
+                TreeRegenTime -= Time.deltaTime;
+                Regrowth();
+            }
+        }
+    }
 }
+
