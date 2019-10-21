@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
             //thePlayer = other.gameObject;
         }
 
-    if(reloading)
+    /*if(reloading)
         {
             waitToReload -= Time.deltaTime;
             if(waitToReload < 0)
@@ -33,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
                 Application.LoadLevel(Application.loadedLevel);
                 //thePlayer.SetActive(true);
             }
-        }
+        }*/
     }
 
     public void HurtPlayer(int damageDealt)

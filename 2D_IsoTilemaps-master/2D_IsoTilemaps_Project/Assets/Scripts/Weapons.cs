@@ -12,7 +12,7 @@ public class Weapons : MonoBehaviour
     private int[] WeaponDamageArr = { 10, 20, 30 };
     
     //variables to be used in calls
-    private string Weapon = "NONE";
+    //private string Weapon = "NONE";
     private string wType = "NONE";
     private int wDamage = -1;
 
