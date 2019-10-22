@@ -8,7 +8,7 @@ public class CharMobileMovement : MonoBehaviour
     Rigidbody2D rb;
     float ChardirX;
     float ChardirY;
-    float movespeed = 4f;
+    float movespeed = 2f;
     IsometricCharacterRenderer isoRenderer;
 
     void Start()

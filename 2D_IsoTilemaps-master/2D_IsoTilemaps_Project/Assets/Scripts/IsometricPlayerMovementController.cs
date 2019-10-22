@@ -7,7 +7,6 @@ public class IsometricPlayerMovementController : MonoBehaviour
 
     public float movementSpeed = 1f;
     IsometricCharacterRenderer isoRenderer;
-
     Rigidbody2D rbody;
 
     private void Awake()
