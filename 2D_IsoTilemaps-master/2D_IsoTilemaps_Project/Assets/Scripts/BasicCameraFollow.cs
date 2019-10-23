@@ -22,6 +22,11 @@ public class BasicCameraFollow : MonoBehaviour
 			Vector3 velocity = (targetPos - transform.position) * moveSpeed;
 			transform.position = Vector3.SmoothDamp (transform.position, targetPos, ref velocity, 1.0f, Time.deltaTime);
 		}
+
+    if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 	}
 }
 

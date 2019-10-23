@@ -46,9 +46,10 @@ Camera:
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -116,5 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e512b9fd2f4b484db3736faef092851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTarget: {fileID: 0}
+  followTarget: {fileID: 4517516747076508404, guid: 57dc9c20081065549a1a528d7c6eee9e,
+    type: 3}
   moveSpeed: 10
