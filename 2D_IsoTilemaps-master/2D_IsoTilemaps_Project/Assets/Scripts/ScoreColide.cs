@@ -8,6 +8,38 @@ public class ScoreColide : MonoBehaviour
     //method below assignes a score for the player on collisding with objects.
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //boss battle deduction
+        if (collision.gameObject.name == "bossmage")
+        {
+            if (CharacterAttributes.PlayerArmor.ArmorOn == true)
+            {
+                if (CharacterAttributes.PlayerArmor.getArmorStat() <= 50)
+                {
+                    CharacterAttributes.PlayerHealth.setHealth((50 - CharacterAttributes.PlayerArmor.getArmorStat()), 0);
+                    CharacterAttributes.PlayerArmor.setArmorStat(CharacterAttributes.PlayerArmor.ArmorType, CharacterAttributes.PlayerArmor.getArmorStat(), 0);
+                }
+                else
+                {
+                    CharacterAttributes.PlayerArmor.setArmorStat(CharacterAttributes.PlayerArmor.ArmorType, 50, 0);
+                }
+            }
+            else
+            {
+                CharacterAttributes.PlayerHealth.setHealth(50, 0);
+                if (CharacterAttributes.PlayerHealth.getHealth()>0)
+                {
+                    CharacterAttributes.PlayerHealth.setAlive(true);
+                }
+                else
+                {
+                    CharacterAttributes.PlayerHealth.setAlive(false);
+                }
+            }
+            if (CharacterAttributes.PlayerHealth.getAlive() == false)
+            {
+                Application.Quit();
+            }
+        }
         //spider damage collision
         if (collision.gameObject.name == "spider")
             {
@@ -26,7 +58,19 @@ public class ScoreColide : MonoBehaviour
                 else
                 {
                     CharacterAttributes.PlayerHealth.setHealth(15, 0);
+                if (CharacterAttributes.PlayerHealth.getHealth() > 0)
+                {
+                    CharacterAttributes.PlayerHealth.setAlive(true);
                 }
+                else
+                {
+                    CharacterAttributes.PlayerHealth.setAlive(false);
+                }
+                if (CharacterAttributes.PlayerHealth.getAlive() == false)
+                {
+                    Application.Quit();
+                }
+            }
             }
         //orb damage reduction beneath
         for (int i = 1; i <= 3; i++)
@@ -48,7 +92,19 @@ public class ScoreColide : MonoBehaviour
                 else
                 {
                     CharacterAttributes.PlayerHealth.setHealth(10, 0);
+                    if (CharacterAttributes.PlayerHealth.getHealth() > 0)
+                    {
+                        CharacterAttributes.PlayerHealth.setAlive(true);
+                    }
+                    else
+                    {
+                        CharacterAttributes.PlayerHealth.setAlive(false);
+                    }
                 }
+            }
+            if (CharacterAttributes.PlayerHealth.getAlive() == false)
+            {
+                Application.Quit();
             }
         }
         //shell collection and ahealth modification beneath

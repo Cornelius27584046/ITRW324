@@ -21,6 +21,7 @@ public class Health
 {
     private int currentHealth = 0;
     private int currentMax = 100;
+    private bool alive = true; 
 
     //methods to adjust the current health
     public int getHealth()
@@ -58,6 +59,14 @@ public class Health
         {
             currentMax = (currentMax + 20);
         }
+    }
+    public void setAlive(bool state)
+    {
+        alive = state;
+    }
+    public bool getAlive()
+    {
+        return alive;
     }
 }
 //this class is created to maintain the armor a character can wear and its stats
