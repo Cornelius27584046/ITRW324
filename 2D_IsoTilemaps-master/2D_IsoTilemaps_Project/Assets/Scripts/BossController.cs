@@ -28,6 +28,17 @@ public class BossController : MonoBehaviour
         else if (Vector3.Distance(target.position, transform.position) >= maxRange)
         {
             GoHome();
+            myAnim.SetBool("isClose", false);
+        }
+
+        if (Vector3.Distance(target.position, transform.position) <= (maxRange - 3) && Vector3.Distance(target.position, transform.position) >= minRange)
+        {
+            AttackPlayer();
+        }
+
+        if (Vector3.Distance(target.position, transform.position) >= (maxRange - 3) && Vector3.Distance(target.position, transform.position) >= minRange)
+        {
+            myAnim.SetBool("isClose", false);
         }
     }
 
@@ -37,6 +48,11 @@ public class BossController : MonoBehaviour
         myAnim.SetFloat("moveX", (target.position.x - transform.position.x));
         myAnim.SetFloat("moveY", (target.position.y - transform.position.y));
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+    }
+
+    public void AttackPlayer()
+    {
+        myAnim.SetBool("isClose", true);
     }
 
     public void GoHome()
