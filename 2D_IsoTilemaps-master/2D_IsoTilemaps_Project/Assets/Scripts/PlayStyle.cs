@@ -54,7 +54,7 @@ public class PlayStyle : MonoBehaviour
             ChardirY = Input.acceleration.y * movementSpeed;
             inputVector = new Vector2(ChardirX, ChardirY);
             rb.velocity = new Vector2(ChardirX, ChardirY);
-            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -23f, 31f), Mathf.Clamp(transform.position.y, -12, 15));
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -23f, 31f), Mathf.Clamp(transform.position.y, -12, 20));
         }
     }
 }
