@@ -10,6 +10,7 @@ public class BossController : MonoBehaviour
     public float speed;
     public float minRange;
     public float maxRange;
+    public Transform homePos;
 
     void Start()
     {
@@ -23,6 +24,11 @@ public class BossController : MonoBehaviour
         {
             FollowPlayer();
         }
+
+        else if (Vector3.Distance(target.position, transform.position) >= maxRange)
+        {
+            GoHome();
+        }
     }
 
     public void FollowPlayer()
@@ -31,5 +37,10 @@ public class BossController : MonoBehaviour
         myAnim.SetFloat("moveX", (target.position.x - transform.position.x));
         myAnim.SetFloat("moveY", (target.position.y - transform.position.y));
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+    }
+
+    public void GoHome()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, homePos.position, speed * Time.deltaTime);
     }
 }
