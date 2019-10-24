@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class EnemiesHMedium : MonoBehaviour
 {
-    private int health = 70;
-    private int armor = 15;
+    private int health = 100;
+    private int armor = 30;
     private int rollOverDamage = 0;
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Sword")
         {
-            setArmor(10);
+            setArmor(CharacterAttributes.PlayerWeapon.getWDamage());
         }
     }
     private void setHealth(int damage)

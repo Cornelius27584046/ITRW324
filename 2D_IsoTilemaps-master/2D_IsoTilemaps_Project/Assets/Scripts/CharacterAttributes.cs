@@ -8,10 +8,12 @@ public class CharacterAttributes : MonoBehaviour
     public static int Score = 0;
     public static Health PlayerHealth = new Health();
     public static Armor PlayerArmor = new Armor();
+    public static Weapons PlayerWeapon = new Weapons();
     private void OnGUI()
     {
         GUI.Box(new Rect((Screen.width - 120), 20, 100, 70), "HP\n(" + PlayerHealth.getHealth().ToString() + "/" + PlayerHealth.getMaxHealth().ToString() + ")\nArmor\n(" + PlayerArmor.getArmorStat().ToString() + " / " + PlayerArmor.getArmorOn().ToString()+ ")");
         //armor can either be destroyed on 0, meaning its left 0 and no repairs can be made, or code can be reverted to ensure the armor is always on, even on 0 and can be restored from that point.
+        PlayerWeapon.setWeaponStat("Sword");
     }
 }
 

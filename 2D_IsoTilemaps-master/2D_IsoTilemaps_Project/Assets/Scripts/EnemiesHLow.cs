@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class EnemiesHLow : MonoBehaviour
 {
-    private int health = 30;
+    private int health = 50;
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Sword")
         {
-            setHealth(10);
-            Debug.Log(health);
+            setHealth(CharacterAttributes.PlayerWeapon.getWDamage());
         }
     }
     private void setHealth(int damage)
