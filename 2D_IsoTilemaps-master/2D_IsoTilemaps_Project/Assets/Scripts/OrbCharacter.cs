@@ -68,12 +68,6 @@ public class OrbCharacter : MonoBehaviour
             }
         }
     }
-
-    //void OnCollisionEnter2D
-    //{
-
-    //}
-
     public void ChooseDirection()
     {
         MoveDirection = Random.Range(0, 4);
