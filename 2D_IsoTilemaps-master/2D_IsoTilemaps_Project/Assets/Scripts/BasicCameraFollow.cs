@@ -23,10 +23,13 @@ public class BasicCameraFollow : MonoBehaviour
 			transform.position = Vector3.SmoothDamp (transform.position, targetPos, ref velocity, 1.0f, Time.deltaTime);
 		}
 
-    if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }
-	}
+
+        // Disable screen dim on mobile platforms
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+    }
 }
 
