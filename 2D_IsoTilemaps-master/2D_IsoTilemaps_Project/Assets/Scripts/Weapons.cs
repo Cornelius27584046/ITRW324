@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapons : MonoBehaviour
+public class Weapons
 {
     //array of weapon types
     private string[] WeaponArr = { "Fists", "Rock", "Stick", "Axe", "Hammer", "Sword", "Battle-Axe", "WarHammer", "Spear" };
@@ -10,7 +10,7 @@ public class Weapons : MonoBehaviour
     private string[] WeaponTypeArr = { "Melee", "Throwable", "Twohanded" };
     //array of weapon damage
     private int[] WeaponDamageArr = { 10, 20, 30 };
-    
+
     //variables to be used in calls
     //private string Weapon = "NONE";
     private string wType = "NONE";
@@ -23,7 +23,6 @@ public class Weapons : MonoBehaviour
         string wType = WeaponTypeArr[0];
         int wDamage = WeaponDamageArr[0];
     }
-
     //method to set the attributes of the weapons
     public void setWeaponStat(string Weapontype)
     {
@@ -74,16 +73,9 @@ public class Weapons : MonoBehaviour
             wDamage = WeaponDamageArr[2];
         }
     }
-
-    // Start is called before the first frame update
-    void Start()
+    //returns the weapon damage that is set up.
+    public int getWDamage()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return wDamage;
     }
 }

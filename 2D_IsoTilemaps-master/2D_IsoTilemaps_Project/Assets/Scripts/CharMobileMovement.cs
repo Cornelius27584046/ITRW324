@@ -22,7 +22,7 @@ public class CharMobileMovement : MonoBehaviour
     {
         ChardirX = Input.acceleration.x * movespeed;
         ChardirY = Input.acceleration.y * movespeed;
-        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -23f, 23f), Mathf.Clamp(transform.position.y, -12, 13));
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -23f, 31f), Mathf.Clamp(transform.position.y, -12, 13));
     }
 
     private void FixedUpdate()

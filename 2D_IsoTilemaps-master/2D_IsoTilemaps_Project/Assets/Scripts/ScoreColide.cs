@@ -8,6 +8,26 @@ public class ScoreColide : MonoBehaviour
     //method below assignes a score for the player on collisding with objects.
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //spider damage collision
+        if (collision.gameObject.name == "spider")
+            {
+                if (CharacterAttributes.PlayerArmor.ArmorOn == true)
+                {
+                    if (CharacterAttributes.PlayerArmor.getArmorStat() <= 15)
+                    {
+                        CharacterAttributes.PlayerHealth.setHealth((15 - CharacterAttributes.PlayerArmor.getArmorStat()), 0);
+                        CharacterAttributes.PlayerArmor.setArmorStat(CharacterAttributes.PlayerArmor.ArmorType, CharacterAttributes.PlayerArmor.getArmorStat(), 0);
+                    }
+                    else
+                    {
+                        CharacterAttributes.PlayerArmor.setArmorStat(CharacterAttributes.PlayerArmor.ArmorType, 15, 0);
+                    }
+                }
+                else
+                {
+                    CharacterAttributes.PlayerHealth.setHealth(15, 0);
+                }
+            }
         //orb damage reduction beneath
         for (int i = 1; i <= 3; i++)
         {
@@ -49,13 +69,39 @@ public class ScoreColide : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
-        //log collection beneath & treecutting
+        //Tree "cutting" collection
         for (int i = 1; i <= 9; i++)
         {
             if (collision.gameObject.name == "TreePalmC" + i)
             {
-                TreeDurability.Tree.StartTree(); //this is not working correct
+                //TreeDurability.Tree.StartTree(); //this is not working correct
                 Inventory.PlayerInventory.AddItem("Logs");
+            }
+        }
+        //Stone "mining" collection
+        for (int i = 1; i <= 6; i++)
+        {
+            if (collision.gameObject.name == "stone" + i)
+            {
+                Inventory.PlayerInventory.AddItem("Stone");
+            }
+        }
+        //log collection
+        for (int i = 1; i <= 8; i++)
+        {
+            if (collision.gameObject.name == "log" + i)
+            {
+                Inventory.PlayerInventory.AddItem("Logs");
+                Destroy(collision.gameObject);
+            }
+        }
+        //grass collection
+        for (int i = 1; i <= 30; i++)
+        {
+            if (collision.gameObject.name == "grass" + i)
+            {
+                Inventory.PlayerInventory.AddItem("Grass");
+                Destroy(collision.gameObject);
             }
         }
         //armor collection beneath
