@@ -4,15 +4,41 @@ using UnityEngine;
 
 public class EnemiesHHigh : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private int health = 100;
+    private int armor = 50;
+    private int rollOverDamage = 0;
+    void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.gameObject.name == "Sword")
+        {
+            setArmor(10);
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    private void setHealth(int damage)
     {
-        
+        health -= damage;
+        IsDead();
+    }
+    private void setArmor(int damage)
+    {
+        if (damage < armor)
+        {
+            armor -= damage;
+        }
+        else
+        {
+            damage -= armor;
+            armor = 0;
+            rollOverDamage = damage;
+            setHealth(rollOverDamage);
+
+        }
+    }
+    private void IsDead()
+    {
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
