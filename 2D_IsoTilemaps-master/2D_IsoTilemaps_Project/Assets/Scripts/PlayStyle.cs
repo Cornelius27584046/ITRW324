@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//This script was created by myself to devise a way to determine how movement of
+//the character should be established upon the device that is to be in use.
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,4 +1,7 @@
-﻿//code below is from source https://www.youtube.com/watch?v=wpSm2O2LIRM
+﻿//The following script was copied to help with gyro movement control of
+// the player for mobile purposes, the video of the create of the code can
+//be found below.
+//video of the code used is given in this link https://www.youtube.com/watch?v=wpSm2O2LIRM
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
